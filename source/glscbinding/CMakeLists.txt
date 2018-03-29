@@ -49,6 +49,8 @@ set(source_path  "${CMAKE_CURRENT_SOURCE_DIR}/source")
 
 set(headers
     ${include_path}/noglsc.h
+    
+    ${include_path}/glscbinding.h
 
     ${include_path}/glsc/bitfield.h
     ${include_path}/glsc/boolean.h
@@ -99,6 +101,8 @@ file(GLOB featured_includes ${include_path}/glsc*/*.h)
 list(APPEND headers ${featured_includes})
 
 set(sources
+    ${source_path}/glscbinding.cpp
+    
     ${source_path}/Binding.cpp
     ${source_path}/Binding_list.cpp
 

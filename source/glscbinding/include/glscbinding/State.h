@@ -9,7 +9,7 @@ namespace glscbinding
 {
 
 
-class State : public AbstractState
+class GLSCBINDING_API State : public AbstractState
 {
 public:
     State() = default;

@@ -5,7 +5,7 @@
 #include <bitset>
 #include <sstream>
 
-#include <glscbinding/AbstractVersion.h>
+#include <glscbinding/Version.h>
 #include <glscbinding-aux/Meta.h>
 
 #include "types_to_string_private.h"
@@ -138,7 +138,7 @@ std::ostream & operator<<(std::ostream & stream, const Value<glsc::GLuint_array_
     return stream;
 }
 
-std::ostream & operator<<(std::ostream & stream, const AbstractVersion & version)
+std::ostream & operator<<(std::ostream & stream, const Version & version)
 {
     stream << version.toString();
 
@@ -149,42 +149,39 @@ std::ostream & operator<<(std::ostream & stream, const AbstractValue * value)
 {
     if (typeid(*value) == typeid(AbstractValue))
     {
-        stream << reinterpret_cast<const void*>(value);
+        return stream << reinterpret_cast<const void*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLvoid *>))
+    if (typeid(*value) == typeid(Value<glsc::GLvoid *>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLvoid *>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLvoid *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLextension>))
+    if (typeid(*value) == typeid(Value<glsc::GLextension>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLextension>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLextension>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLextension *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLextension *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLextension *>))
+    if (typeid(*value) == typeid(Value<glsc::GLenum>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLextension *>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLenum>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLenum *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLenum *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLenum>))
+    if (typeid(*value) == typeid(Value<glsc::GLboolean>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLenum>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLboolean>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLenum *>))
+    if (typeid(*value) == typeid(Value<glsc::GLboolean *>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLenum *>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLboolean>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::GLboolean>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLboolean *>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::GLboolean *>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLboolean *>*>(value);
     }
 
 
@@ -193,294 +190,265 @@ std::ostream & operator<<(std::ostream & stream, const AbstractValue * value)
 
     // Omit glsc::GLvoid
 
-    else if (typeid(*value) == typeid(Value<glsc::GLbyte>))
+    if (typeid(*value) == typeid(Value<glsc::GLbyte>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLbyte>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLbyte>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLbyte *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLbyte *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLbyte *>))
+    if (typeid(*value) == typeid(Value<glsc::GLshort>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLbyte *>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLshort>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLshort *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLshort *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLshort>))
+    if (typeid(*value) == typeid(Value<glsc::GLint>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLshort>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLint>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLint *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLint *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLshort *>))
+    if (typeid(*value) == typeid(Value<glsc::GLclampx>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLshort *>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLclampx>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLclampx *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLclampx *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLint>))
+    if (typeid(*value) == typeid(Value<glsc::GLubyte>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLint>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLubyte>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLubyte *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLubyte *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLint *>))
+    if (typeid(*value) == typeid(Value<glsc::GLushort>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLint *>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLushort>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLushort *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLushort *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLclampx>))
+    if (typeid(*value) == typeid(Value<glsc::GLuint>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLclampx>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLuint>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLuint *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLuint *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLclampx *>))
+    if (typeid(*value) == typeid(Value<glsc::GLsizei>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLclampx *>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLsizei>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLsizei *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLsizei *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLubyte>))
+    if (typeid(*value) == typeid(Value<glsc::GLfloat>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLubyte>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLfloat>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLfloat *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLfloat *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLubyte *>))
+    if (typeid(*value) == typeid(Value<glsc::GLclampf>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLubyte *>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLclampf>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLclampf *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLclampf *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLushort>))
+    if (typeid(*value) == typeid(Value<glsc::GLdouble>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLushort>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLdouble>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLdouble *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLdouble *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLushort *>))
+    if (typeid(*value) == typeid(Value<glsc::GLclampd>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLushort *>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLclampd>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLclampd *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLclampd *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLuint>))
+    if (typeid(*value) == typeid(Value<glsc::GLeglClientBufferEXT>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLuint>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLeglClientBufferEXT>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLeglClientBufferEXT *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLeglClientBufferEXT *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLuint *>))
+    if (typeid(*value) == typeid(Value<glsc::GLeglImageOES>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLuint *>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLeglImageOES>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLeglImageOES *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLeglImageOES *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLsizei>))
+    if (typeid(*value) == typeid(Value<glsc::GLchar>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLsizei>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLchar>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLchar *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLchar *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLsizei *>))
+    if (typeid(*value) == typeid(Value<glsc::GLcharARB>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLsizei *>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLcharARB>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLcharARB *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLcharARB *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLfloat>))
+    if (typeid(*value) == typeid(Value<glsc::GLhandleARB>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLfloat>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLhandleARB>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLhandleARB *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLhandleARB *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLfloat *>))
+    if (typeid(*value) == typeid(Value<glsc::GLhalfARB>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLfloat *>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLhalfARB>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLhalfARB *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLhalfARB *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLclampf>))
+    if (typeid(*value) == typeid(Value<glsc::GLhalf>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLclampf>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLhalf>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLhalf *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLhalf *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLclampf *>))
+    if (typeid(*value) == typeid(Value<glsc::GLfixed>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLclampf *>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLfixed>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLfixed *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLfixed *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLdouble>))
+    if (typeid(*value) == typeid(Value<glsc::GLintptr>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLdouble>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLintptr>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLintptr *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLintptr *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLdouble *>))
+    if (typeid(*value) == typeid(Value<glsc::GLsizeiptr>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLdouble *>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLsizeiptr>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLsizeiptr *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLsizeiptr *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLclampd>))
+    if (typeid(*value) == typeid(Value<glsc::GLint64>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLclampd>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLint64>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLint64 *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLint64 *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLclampd *>))
+    if (typeid(*value) == typeid(Value<glsc::GLuint64>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLclampd *>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLuint64>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLuint64 *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLuint64 *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLeglClientBufferEXT>))
+    if (typeid(*value) == typeid(Value<glsc::GLintptrARB>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLeglClientBufferEXT>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLintptrARB>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLintptrARB *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLintptrARB *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLeglClientBufferEXT *>))
+    if (typeid(*value) == typeid(Value<glsc::GLsizeiptrARB>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLeglClientBufferEXT *>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLsizeiptrARB>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLsizeiptrARB *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLsizeiptrARB *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLeglImageOES>))
+    if (typeid(*value) == typeid(Value<glsc::GLint64EXT>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLeglImageOES>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLint64EXT>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLint64EXT *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLint64EXT *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLeglImageOES *>))
+    if (typeid(*value) == typeid(Value<glsc::GLuint64EXT>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLeglImageOES *>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLuint64EXT>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLuint64EXT *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLuint64EXT *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLchar>))
+    if (typeid(*value) == typeid(Value<glsc::GLsync>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLchar>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLsync>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLchar *>))
+    if (typeid(*value) == typeid(Value<glsc::GLsync *>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLchar *>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLcharARB>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::GLcharARB>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLcharARB *>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::GLcharARB *>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLhandleARB>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::GLhandleARB>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLhandleARB *>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::GLhandleARB *>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLhalfARB>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::GLhalfARB>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLhalfARB *>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::GLhalfARB *>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLhalf>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::GLhalf>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLhalf *>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::GLhalf *>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLfixed>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::GLfixed>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLfixed *>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::GLfixed *>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLintptr>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::GLintptr>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLintptr *>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::GLintptr *>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLsizeiptr>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::GLsizeiptr>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLsizeiptr *>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::GLsizeiptr *>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLint64>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::GLint64>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLint64 *>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::GLint64 *>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLuint64>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::GLuint64>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLuint64 *>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::GLuint64 *>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLintptrARB>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::GLintptrARB>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLintptrARB *>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::GLintptrARB *>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLsizeiptrARB>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::GLsizeiptrARB>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLsizeiptrARB *>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::GLsizeiptrARB *>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLint64EXT>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::GLint64EXT>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLint64EXT *>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::GLint64EXT *>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLuint64EXT>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::GLuint64EXT>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLuint64EXT *>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::GLuint64EXT *>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLsync>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::GLsync>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLsync *>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::GLsync *>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLsync *>*>(value);
     }
 
 
@@ -489,152 +457,134 @@ std::ostream & operator<<(std::ostream & stream, const AbstractValue * value)
 
     // Omit glsc::_cl_event
 
-    else if (typeid(*value) == typeid(Value<glsc::GLDEBUGPROC>))
+    if (typeid(*value) == typeid(Value<glsc::GLDEBUGPROC>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLDEBUGPROC>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLDEBUGPROC>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLDEBUGPROC *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLDEBUGPROC *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLDEBUGPROC *>))
+    if (typeid(*value) == typeid(Value<glsc::GLDEBUGPROCARB>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLDEBUGPROC *>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLDEBUGPROCARB>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLDEBUGPROCARB *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLDEBUGPROCARB *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLDEBUGPROCARB>))
+    if (typeid(*value) == typeid(Value<glsc::GLDEBUGPROCKHR>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLDEBUGPROCARB>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLDEBUGPROCKHR>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLDEBUGPROCKHR *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLDEBUGPROCKHR *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLDEBUGPROCARB *>))
+    if (typeid(*value) == typeid(Value<glsc::GLubyte>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLDEBUGPROCARB *>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLubyte>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLubyte *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLubyte *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLDEBUGPROCKHR>))
+    if (typeid(*value) == typeid(Value<glsc::GLfloat>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLDEBUGPROCKHR>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLfloat>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLfloat *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLfloat *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLDEBUGPROCKHR *>))
+    if (typeid(*value) == typeid(Value<glsc::GLintptr>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLDEBUGPROCKHR *>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLintptr>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLintptr *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLintptr *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLubyte>))
+    if (typeid(*value) == typeid(Value<glsc::GLsizeiptr>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLubyte>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLsizeiptr>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLsizeiptr *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLsizeiptr *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLubyte *>))
+    if (typeid(*value) == typeid(Value<glsc::GLDEBUGPROCAMD>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLubyte *>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLDEBUGPROCAMD>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLDEBUGPROCAMD *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLDEBUGPROCAMD *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLfloat>))
+    if (typeid(*value) == typeid(Value<glsc::GLhalfNV>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLfloat>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLhalfNV>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLhalfNV *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLhalfNV *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLfloat *>))
+    if (typeid(*value) == typeid(Value<glsc::GLvdpauSurfaceNV>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLfloat *>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLvdpauSurfaceNV>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLvdpauSurfaceNV *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLvdpauSurfaceNV *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLintptr>))
+    if (typeid(*value) == typeid(Value<glsc::GLVULKANPROCNV>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLintptr>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLVULKANPROCNV>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLVULKANPROCNV *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLVULKANPROCNV *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLintptr *>))
+    if (typeid(*value) == typeid(Value<glsc::GLuint_array_2>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLintptr *>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::GLuint_array_2>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::GLuint_array_2 *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLuint_array_2 *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLsizeiptr>))
+    if (typeid(*value) == typeid(Value<glsc::AttribMask>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLsizeiptr>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::AttribMask>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::AttribMask *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::AttribMask *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLsizeiptr *>))
+    if (typeid(*value) == typeid(Value<glsc::ClearBufferMask>))
     {
-        stream << *reinterpret_cast<const Value<glsc::GLsizeiptr *>*>(value);
+        return stream << *reinterpret_cast<const Value<glsc::ClearBufferMask>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<glsc::ClearBufferMask *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::ClearBufferMask *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<glsc::GLDEBUGPROCAMD>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::GLDEBUGPROCAMD>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLDEBUGPROCAMD *>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::GLDEBUGPROCAMD *>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLhalfNV>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::GLhalfNV>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLhalfNV *>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::GLhalfNV *>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLvdpauSurfaceNV>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::GLvdpauSurfaceNV>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLvdpauSurfaceNV *>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::GLvdpauSurfaceNV *>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLVULKANPROCNV>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::GLVULKANPROCNV>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLVULKANPROCNV *>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::GLVULKANPROCNV *>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLuint_array_2>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::GLuint_array_2>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::GLuint_array_2 *>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::GLuint_array_2 *>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::AttribMask>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::AttribMask>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::AttribMask *>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::AttribMask *>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::ClearBufferMask>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::ClearBufferMask>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<glsc::ClearBufferMask *>))
-    {
-        stream << *reinterpret_cast<const Value<glsc::ClearBufferMask *>*>(value);
-    }
-
-    else // expect an AbstractValue with a pointer in first member
-    {
-        stream << *reinterpret_cast<const Value<void *>*>(value);
-    }
-
-    return stream;
+    // expect an AbstractValue with a pointer in first member
+    return stream << *reinterpret_cast<const Value<void *>*>(value);
 }
 
 

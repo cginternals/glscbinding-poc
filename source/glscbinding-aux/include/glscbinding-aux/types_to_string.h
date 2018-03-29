@@ -73,7 +73,7 @@ namespace glscbinding
 {
 
 
-class AbstractVersion;
+class Version;
 
 
 template <typename T>
@@ -128,7 +128,7 @@ GLSCBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const Value
 *  @brief
 *    The operator to allow Versions to be printed onto a std::ostream
 */
-GLSCBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const AbstractVersion & version);
+GLSCBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const Version & version);
 
 GLSCBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const AbstractValue * value);
 

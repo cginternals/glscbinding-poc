@@ -68,7 +68,6 @@ target_include_directories(${target}
 target_link_libraries(${target}
     PRIVATE
     ${DEFAULT_LIBRARIES}
-    glfw
     ${META_PROJECT_NAME}::glscbinding
     ${META_PROJECT_NAME}::glscbinding-aux
     gmock-dev
