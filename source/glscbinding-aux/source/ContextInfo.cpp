@@ -171,7 +171,7 @@ Version ContextInfo::version()
     }
 
     const auto s = std::string(versionString);
-    if (s.compare(0, s.size(), "OpenGL ES", 0, 9))
+    if (s.compare(0, s.size(), "OpenGL ES", 0, 9) || s.compare(0, s.size(), "OpenGL SC", 0, 9))
     {
         return Version(versionString[10] - '0', versionString[12] - '0');
     }
