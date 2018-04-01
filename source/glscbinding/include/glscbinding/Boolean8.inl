@@ -100,3 +100,20 @@ GLSCBINDING_CONSTEXPR bool Boolean8::operator!=(const Boolean8 & other) const
 
 
 } // namespace glscbinding
+
+
+namespace std
+{
+
+
+template<>
+struct hash<glscbinding::Boolean8>
+{
+    hash<char>::result_type operator()(const glscbinding::Boolean8 & boolean) const
+    {
+        return hash<glscbinding::Boolean8::underlying_type>()(static_cast<glscbinding::Boolean8::underlying_type>(boolean));
+    }
+};
+
+
+} // namespace std
