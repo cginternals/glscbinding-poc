@@ -3,6 +3,7 @@
 
 #include <sstream>
 #include <iostream>
+#include <string>
 
 #include <glscbinding/AbstractFunction.h>
 
@@ -162,11 +163,17 @@ std::string ContextInfo::vendor()
 
 Version ContextInfo::version()
 {
-    const auto versionString = Binding::GetString.directCall(GL_VERSION);
+    const auto versionString = reinterpret_cast<const char *>(Binding::GetString.directCall(GL_VERSION));
 
     if (versionString == nullptr)
     {
         return Version();
+    }
+
+    const auto s = std::string(versionString);
+    if (s.compare(0, s.size(), "OpenGL ES", 0, 9))
+    {
+        return Version(versionString[10] - '0', versionString[12] - '0');
     }
 
     return Version(versionString[0] - '0', versionString[2] - '0');

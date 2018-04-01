@@ -22,9 +22,9 @@ namespace glscbinding
 *
 *  Example code:
 *  \code{.cpp}
-*  const glbinding::Version currentVersion = glbinding::aux::ContextInfo::version();
+*  const glscbinding::Version currentVersion = glscbinding::aux::ContextInfo::version();
 *
-*  if (currentVersion >= glbinding::Version(3, 2))
+*  if (currentVersion >= glscbinding::Version(3, 2))
 *  {
 *      // do something
 *  }
