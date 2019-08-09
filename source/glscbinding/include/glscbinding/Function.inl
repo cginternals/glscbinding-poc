@@ -9,7 +9,9 @@
 #include <glscbinding/Value.h>
 #include <glscbinding/FunctionCall.h>
 #include <glscbinding/CallbackMask.h>
+
 #include <glscbinding/Boolean8.h>
+
 
 
 namespace glscbinding
@@ -28,6 +30,7 @@ struct BasicCallHelper
 
 // Special case for booleans because of MSVC differing behavior
 
+
 template <typename... Arguments>
 struct BasicCallHelper<glscbinding::Boolean8, Arguments...>
 {
@@ -36,6 +39,7 @@ struct BasicCallHelper<glscbinding::Boolean8, Arguments...>
         return reinterpret_cast<typename glscbinding::Function<glscbinding::Boolean8::underlying_type, Arguments...>::Signature>(function->address())(std::forward<Arguments>(arguments)...);
     }
 };
+
 
 
 template <typename ReturnType, typename... Arguments>
@@ -153,6 +157,13 @@ ReturnType Function<ReturnType, Arguments...>::call(Arguments&... arguments) con
         if (isEnabled(CallbackMask::Unresolved))
         {
            AbstractFunction::unresolved(this);
+        }
+        else
+        {
+            // Trying to call a function without check if it is resolvable is considered a programming error.
+            // You may try to call AbstractFunction::resolve first and check the address for validity (a pointer
+            // unequal to nullptr is considered valid) or check the exposition of associated extensions.
+            assert(false);
         }
 
         return ReturnType();

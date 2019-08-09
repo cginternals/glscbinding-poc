@@ -12,5 +12,4 @@ namespace glscbinding
 Function<void, GLenum, GLenum> Binding::Hint("glHint");
 
 
-
 } // namespace glscbinding

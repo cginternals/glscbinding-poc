@@ -73,22 +73,22 @@ public:
     *  @brief
     *    Converts a GLenum to a string
     *
-    *  @param[in] enum
+    *  @param[in] glscenum
     *    The enum to convert
     *
     *  @return
     *    A string representation of the GLenum symbol name
     *
-    *  @remarks
+    *  @remark
     *    Beware, that some enums in the OpenGL API have different symbol names but identical enum values and that this function cannot differentiate between them
     */
     static const std::string & getString(glsc::GLenum glscenum);
     
     /**
     *  @brief
-    *    Converts a string to a enum symbol
+    *    Converts a string to an enum symbol
     *
-    *  @param[in] enum
+    *  @param[in] glscenum
     *    The string representation of the enum
     *
     *  @return
@@ -98,10 +98,10 @@ public:
     
     /**
     *  @brief
-    *    Returns the list of all enums known by the glsc.xml
+    *    Returns the list of all enums known by the gl.xml
     *
     *  @return
-    *    The list of all enums known by the glsc.xml
+    *    The list of all enums known by the gl.xml
     */
     static std::vector<glsc::GLenum> enums();
 
@@ -109,26 +109,26 @@ public:
     *  @brief
     *    Converts a GLboolean to a string
     *
-    *  @param[in] boolean
+    *  @param[in] glscboolean
     *    The boolean to convert
     *
     *  @return
     *    A string representation of the GLboolean symbol name
     *
-    *  @remarks
-    *    Can either be 'GLSC_TRUE' or 'GLSC_FALSE'
+    *  @remark
+    *    Can either be `GLSC_TRUE` or `GLSC_FALSE`
     */
-    static const std::string & getString(const glsc::GLboolean & boolean);
+    static const std::string & getString(const glsc::GLboolean & glscboolean);
     
     /**
     *  @brief
     *    Converts a string to a GLboolean symbol
     *
-    *  @param[in] glboolean
+    *  @param[in] boolean
     *    The string representation of the GLboolean
     *
     *  @return
-    *    The symbol identified through the boolean string, 'GLSC_FALSE' if failed
+    *    The symbol identified through the boolean string, `GLSC_FALSE` if failed
     */
     static glsc::GLboolean getBoolean(const std::string & boolean);
 
@@ -136,17 +136,17 @@ public:
     *  @brief
     *    Converts a GLextension to its string representation
     *
-    *  @param[in] extension
+    *  @param[in] glscextension
     *    The extension to convert
     *
     *  @return
     *    The string representation of the extension
     */
-    static const std::string & getString(glsc::GLextension extension);
+    static const std::string & getString(glsc::GLextension glscextension);
     
     /**
     *  @brief
-    *    Converts a string to an extension
+    *    Converts a string to an GLextension
     *
     *  @param[in] extension
     *    The string representation of the extension
@@ -158,10 +158,10 @@ public:
 
     /**
     *  @brief
-    *    Returns the set of all extensions known by the glsc.xml
+    *    Returns the set of all extensions known by the gl.xml
     *
     *  @return
-    *    The set of all extensions known by the glsc.xml
+    *    The set of all extensions known by the gl.xml
     */
     static std::set<glsc::GLextension> extensions();
     
@@ -176,31 +176,31 @@ public:
     *
     *  @return
     *    The set of extensions that should be supported for the given version.
-    *    All non versioned extensions can be queried by providing the null version
+    *    All non-versioned extensions can be queried by providing the null version
     */
     static const std::set<glsc::GLextension> extensions(const Version & version);
 
     /**
     *  @brief
-    *    Returns the list of extensions that are requiring an OpenGL function
+    *    Returns the list of extensions that are requiring a function
     *
     *  @param[in] function
     *    The name of the function, including the 'glsc' prefix
     *
     *  @return
-    *    The set of extensions that are requiring an OpenGL function
+    *    The set of extensions that are requiring a function
     */
     static const std::set<glsc::GLextension> extensions(const std::string & glscfunction);
 
     /**
     *  @brief
-    *    Returns the list of features that are requiring an OpenGL function
+    *    Returns the list of features that are requiring a function
     *
     *  @param[in] function
     *    The name of the function, including the 'glsc' prefix
     *
     *  @return
-    *    The set of features that are requiring an OpenGL function
+    *    The set of features that are requiring a function
     */
     static const std::set<Version> versions(const std::string & glscfunction);
     
@@ -214,7 +214,7 @@ public:
     *  @return
     *    The set of functions that are required for the version
     *
-    *  @remarks
+    *  @remark
     *    This is exclusive (preceeding versions are ignored)
     */
     static const std::set<AbstractFunction *> functions(const Version & version);
@@ -233,27 +233,28 @@ public:
 
     /**
     *  @brief
-    *    Returns the first OpenGL Version (Feature) that required the extension
+    *    Returns the first Version (Feature) that required the extension
     *
-    *  @param[in] extension
+    *  @param[in] glscextension
     *    The extension
     *
     *  @return
-    *    The first GLSC Version (Feature) that required the extension
+    *    The first Version (Feature) that required the extension
     */
-    static const Version & version(glsc::GLextension glextension);
+    static const Version & version(glsc::GLextension glscextension);
     
     /**
     *  @brief
-    *    Returns the list of all Versions (Features) known by the glsc.xml
+    *    Returns the list of all Versions (Features) known by the gl.xml
     *
     *  @return
-    *    The list of all Versions (Features) known by the glsc.xml
+    *    The list of all Versions (Features) known by the gl.xml
     */
     static const std::set<Version> & versions();
 
     /**
-    *  @brief convert bitfield to symbol name string representation
+    *  @brief
+    *    Convert bitfield to symbol name string representation
     *
     *  @param[in] glbitfield
     *    The bitfield value
@@ -261,10 +262,11 @@ public:
     *  @return
     *    The string representation of the value
     */
-    static const std::string & getString(glsc::AttribMask bitfield);
+    static const std::string & getString(glsc::ClearBufferMask glscbitfield);
 
     /**
-    *  @brief convert bitfield to symbol name string representation
+    *  @brief
+    *    Convert bitfield to symbol name string representation
     *
     *  @param[in] glbitfield
     *    The bitfield value
@@ -272,13 +274,13 @@ public:
     *  @return
     *    The string representation of the value
     */
-    static const std::string & getString(glsc::ClearBufferMask bitfield);
+    static const std::string & getString(glsc::UnusedMask glscbitfield);
 
 
 private:
     /**
     *  @brief
-    *    Returns the bucket index of an OpenGL identifier used for the actual lookup into the compile-time maps
+    *    Returns the bucket index of an identifier used for the actual lookup into the compile-time maps
     *
     *  @param[in] identifier
     *    The identifier for the bucket lookup
@@ -287,7 +289,7 @@ private:
     *    The length of the prefix (e.g., 'glsc' or 'GLSC_') to omit to get the actual first character of the identifier
     *
     *  @return
-    *    The bucket index of an OpenGL identifier
+    *    The bucket index of an identifier
     */
     static size_t alphabeticalGroupIndex(const std::string & identifier, std::uint8_t prefixLength);
 };

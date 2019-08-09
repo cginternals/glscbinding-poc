@@ -19,13 +19,12 @@ const std::unordered_map<std::string, GLbitfield> Meta_BitfieldsByString_B{};
 
 const std::unordered_map<std::string, GLbitfield> Meta_BitfieldsByString_C =
 {
-    { "GL_COLOR_BUFFER_BIT", static_cast<GLbitfield>(AttribMask::GL_COLOR_BUFFER_BIT) },
-    { "GL_COVERAGE_BUFFER_BIT_NV", static_cast<GLbitfield>(ClearBufferMask::GL_COVERAGE_BUFFER_BIT_NV) }
+    { "GL_COLOR_BUFFER_BIT", static_cast<GLbitfield>(ClearBufferMask::GL_COLOR_BUFFER_BIT) }
 };
 
 const std::unordered_map<std::string, GLbitfield> Meta_BitfieldsByString_D =
 {
-    { "GL_DEPTH_BUFFER_BIT", static_cast<GLbitfield>(AttribMask::GL_DEPTH_BUFFER_BIT) }
+    { "GL_DEPTH_BUFFER_BIT", static_cast<GLbitfield>(ClearBufferMask::GL_DEPTH_BUFFER_BIT) }
 };
 
 const std::unordered_map<std::string, GLbitfield> Meta_BitfieldsByString_E{};
@@ -48,7 +47,7 @@ const std::unordered_map<std::string, GLbitfield> Meta_BitfieldsByString_M{};
 
 const std::unordered_map<std::string, GLbitfield> Meta_BitfieldsByString_N =
 {
-    { "GL_NONE_BIT", static_cast<GLbitfield>(AttribMask::GL_NONE_BIT) }
+    { "GL_NONE_BIT", static_cast<GLbitfield>(ClearBufferMask::GL_NONE_BIT) }
 };
 
 const std::unordered_map<std::string, GLbitfield> Meta_BitfieldsByString_O{};
@@ -61,12 +60,15 @@ const std::unordered_map<std::string, GLbitfield> Meta_BitfieldsByString_R{};
 
 const std::unordered_map<std::string, GLbitfield> Meta_BitfieldsByString_S =
 {
-    { "GL_STENCIL_BUFFER_BIT", static_cast<GLbitfield>(AttribMask::GL_STENCIL_BUFFER_BIT) }
+    { "GL_STENCIL_BUFFER_BIT", static_cast<GLbitfield>(ClearBufferMask::GL_STENCIL_BUFFER_BIT) }
 };
 
 const std::unordered_map<std::string, GLbitfield> Meta_BitfieldsByString_T{};
 
-const std::unordered_map<std::string, GLbitfield> Meta_BitfieldsByString_U{};
+const std::unordered_map<std::string, GLbitfield> Meta_BitfieldsByString_U =
+{
+    { "GL_UNUSED_BIT", static_cast<GLbitfield>(UnusedMask::GL_UNUSED_BIT) }
+};
 
 const std::unordered_map<std::string, GLbitfield> Meta_BitfieldsByString_V{};
 
@@ -78,7 +80,7 @@ const std::unordered_map<std::string, GLbitfield> Meta_BitfieldsByString_Y{};
 
 const std::unordered_map<std::string, GLbitfield> Meta_BitfieldsByString_Z{};
 
-const std::array<std::unordered_map<std::string, GLbitfield>, 27> Meta_BitfieldsByStringMaps =
+const std::array<std::unordered_map<std::string, glsc::GLbitfield>, 27> Meta_BitfieldsByStringMaps =
 { {
     Meta_BitfieldsByString_0,
     Meta_BitfieldsByString_A,

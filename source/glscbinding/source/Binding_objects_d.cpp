@@ -18,5 +18,4 @@ Function<void, GLenum, GLint, GLsizei> Binding::DrawArrays("glDrawArrays");
 Function<void, GLenum, GLuint, GLuint, GLsizei, GLenum, const void *> Binding::DrawRangeElements("glDrawRangeElements");
 
 
-
 } // namespace glscbinding

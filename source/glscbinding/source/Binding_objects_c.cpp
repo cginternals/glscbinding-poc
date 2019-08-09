@@ -20,5 +20,4 @@ Function<GLuint> Binding::CreateProgram("glCreateProgram");
 Function<void, GLenum> Binding::CullFace("glCullFace");
 
 
-
 } // namespace glscbinding

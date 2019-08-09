@@ -13,7 +13,6 @@ namespace glscbinding { namespace aux
 
 const std::unordered_map<GLextension, std::set<std::string>> Meta_FunctionStringsByExtension =
 {
-
 };
 
 

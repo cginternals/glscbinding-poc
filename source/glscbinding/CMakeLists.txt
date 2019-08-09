@@ -49,6 +49,7 @@ set(source_path  "${CMAKE_CURRENT_SOURCE_DIR}/source")
 
 set(headers
     ${include_path}/noglsc.h
+    ${include_path}/getProcAddress.h
     
     ${include_path}/glscbinding.h
 
@@ -58,6 +59,7 @@ set(headers
     ${include_path}/glsc/extension.h
     ${include_path}/glsc/functions.h
     ${include_path}/glsc/types.h
+    ${include_path}/glsc/types.inl
     ${include_path}/glsc/values.h
 
     ${include_path}/AbstractFunction.h
@@ -101,6 +103,7 @@ file(GLOB featured_includes ${include_path}/glsc*/*.h)
 list(APPEND headers ${featured_includes})
 
 set(sources
+    ${source_path}/getProcAddress.cpp
     ${source_path}/glscbinding.cpp
     
     ${source_path}/Binding.cpp

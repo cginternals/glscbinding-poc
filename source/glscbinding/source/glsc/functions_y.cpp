@@ -4,13 +4,8 @@
 #include <glscbinding/glsc/functions.h>
 
 
-using namespace glscbinding;
-
-
 namespace glsc
 {
-
-
 
 
 

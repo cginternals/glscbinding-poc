@@ -12,61 +12,18 @@
 #include <glscbinding/Value.h>
 
 
-
-namespace glsc
-{
-
-
-GLSCBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const GLextension & value);
-
-
-} // namespace glsc
-
-
-
-namespace glsc
-{
-
-
-GLSCBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const GLenum & value);
-
-
-} // namespace glsc
-
-
-
 namespace glsc
 {
 
 
 GLSCBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const GLboolean & value);
-
-
-} // namespace glsc
-
-
-
-namespace glsc
-{
-
-
-GLSCBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const AttribMask & value);
-
-
-} // namespace glsc
-
-
-
-namespace glsc
-{
-
-
+GLSCBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const GLenum & value);
+GLSCBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const GLextension & value);
 GLSCBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const ClearBufferMask & value);
+GLSCBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const UnusedMask & value);
 
 
 } // namespace glsc
-
-
 
 
 namespace glscbinding
@@ -76,9 +33,17 @@ namespace glscbinding
 class Version;
 
 
+/**
+*  @brief
+*    Generic ostream operator for the Value template
+*/
 template <typename T>
 GLSCBINDING_AUX_TEMPLATE_API std::ostream & operator<<(std::ostream & stream, const Value<T> & value);
 
+/**
+*  @brief
+*    Generic ostream operator for the Value template with pointer types
+*/
 template <typename T>
 GLSCBINDING_AUX_TEMPLATE_API std::ostream & operator<<(std::ostream & stream, const Value<T *> & value);
 
@@ -89,7 +54,7 @@ GLSCBINDING_AUX_TEMPLATE_API std::ostream & operator<<(std::ostream & stream, co
 template <>
 GLSCBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const Value<glsc::GLenum> & value);
 
-/**
+/* <- ToDo: Add back second * when implementing this function again
 *  @brief
 *    A specialized ostream operator for the gl::GLbitfield Value template
 */
@@ -119,17 +84,14 @@ GLSCBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const Value
 
 /**
 *  @brief
-*    A specialized ostream operator for the gl::GLuint_array_2 Value template
-*/
-template <>
-GLSCBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const Value<glsc::GLuint_array_2> & value);
-
-/**
-*  @brief
 *    The operator to allow Versions to be printed onto a std::ostream
 */
 GLSCBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const Version & version);
 
+/**
+*  @brief
+*    The operator to allow AbstractValues to be printed onto a std::ostream
+*/
 GLSCBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const AbstractValue * value);
 
 

@@ -23,22 +23,20 @@ namespace glscbinding { namespace aux
 {
 
 
-
-const std::string & Meta::getString(const AttribMask bitfield)
+const std::string & Meta::getString(const ClearBufferMask glscbitfield)
 {
-    const auto i = Meta_StringsByAttribMask.find(bitfield);
-    if (i != Meta_StringsByAttribMask.end())
+    const auto i = Meta_StringsByClearBufferMask.find(glscbitfield);
+    if (i != Meta_StringsByClearBufferMask.end())
     {
         return i->second;
     }
     return none;
 }
 
-
-const std::string & Meta::getString(const ClearBufferMask bitfield)
+const std::string & Meta::getString(const UnusedMask glscbitfield)
 {
-    const auto i = Meta_StringsByClearBufferMask.find(bitfield);
-    if (i != Meta_StringsByClearBufferMask.end())
+    const auto i = Meta_StringsByUnusedMask.find(glscbitfield);
+    if (i != Meta_StringsByUnusedMask.end())
     {
         return i->second;
     }

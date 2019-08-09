@@ -4,24 +4,19 @@
 #include <glscbinding/glsc/functions.h>
 
 
-using namespace glscbinding;
-
-
 namespace glsc
 {
 
 
 void glEnable(GLenum cap)
 {
-    return Binding::Enable(cap);
+    return glscbinding::Binding::Enable(cap);
 }
 
 void glEnableVertexAttribArray(GLuint index)
 {
-    return Binding::EnableVertexAttribArray(index);
+    return glscbinding::Binding::EnableVertexAttribArray(index);
 }
-
-
 
 
 } // namespace glsc

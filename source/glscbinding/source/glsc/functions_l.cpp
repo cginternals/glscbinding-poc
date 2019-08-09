@@ -4,19 +4,14 @@
 #include <glscbinding/glsc/functions.h>
 
 
-using namespace glscbinding;
-
-
 namespace glsc
 {
 
 
 void glLineWidth(GLfloat width)
 {
-    return Binding::LineWidth(width);
+    return glscbinding::Binding::LineWidth(width);
 }
-
-
 
 
 } // namespace glsc

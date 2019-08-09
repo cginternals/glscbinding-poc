@@ -9,7 +9,7 @@
 namespace glsc20
 {
 
-
+// import functions
 using glsc::glActiveTexture;
 using glsc::glBindBuffer;
 using glsc::glBindFramebuffer;
@@ -46,10 +46,10 @@ using glsc::glFramebufferRenderbuffer;
 using glsc::glFramebufferTexture2D;
 using glsc::glFrontFace;
 using glsc::glGenBuffers;
+using glsc::glGenerateMipmap;
 using glsc::glGenFramebuffers;
 using glsc::glGenRenderbuffers;
 using glsc::glGenTextures;
-using glsc::glGenerateMipmap;
 using glsc::glGetAttribLocation;
 using glsc::glGetBooleanv;
 using glsc::glGetBufferParameteriv;
@@ -58,17 +58,17 @@ using glsc::glGetFloatv;
 using glsc::glGetFramebufferAttachmentParameteriv;
 using glsc::glGetGraphicsResetStatus;
 using glsc::glGetIntegerv;
+using glsc::glGetnUniformfv;
+using glsc::glGetnUniformiv;
 using glsc::glGetProgramiv;
 using glsc::glGetRenderbufferParameteriv;
 using glsc::glGetString;
 using glsc::glGetTexParameterfv;
 using glsc::glGetTexParameteriv;
 using glsc::glGetUniformLocation;
-using glsc::glGetVertexAttribPointerv;
 using glsc::glGetVertexAttribfv;
 using glsc::glGetVertexAttribiv;
-using glsc::glGetnUniformfv;
-using glsc::glGetnUniformiv;
+using glsc::glGetVertexAttribPointerv;
 using glsc::glHint;
 using glsc::glIsEnabled;
 using glsc::glLineWidth;
@@ -121,6 +121,5 @@ using glsc::glVertexAttrib4f;
 using glsc::glVertexAttrib4fv;
 using glsc::glVertexAttribPointer;
 using glsc::glViewport;
-
 
 } // namespace glsc20

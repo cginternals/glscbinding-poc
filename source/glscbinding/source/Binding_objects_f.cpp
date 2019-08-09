@@ -16,5 +16,4 @@ Function<void, GLenum, GLenum, GLenum, GLuint, GLint> Binding::FramebufferTextur
 Function<void, GLenum> Binding::FrontFace("glFrontFace");
 
 
-
 } // namespace glscbinding

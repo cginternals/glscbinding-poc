@@ -9,7 +9,6 @@
 namespace glsc20ext
 {
 
-
-
+// import functions
 
 } // namespace glsc20ext

@@ -21,5 +21,4 @@ Function<void, GLuint, GLint, GLenum, GLboolean, GLsizei, const void *> Binding:
 Function<void, GLint, GLint, GLsizei, GLsizei> Binding::Viewport("glViewport");
 
 
-
 } // namespace glscbinding

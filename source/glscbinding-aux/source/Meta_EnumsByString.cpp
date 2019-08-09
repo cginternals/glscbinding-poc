@@ -49,10 +49,10 @@ const std::unordered_map<std::string, GLenum> Meta_EnumsByString_C =
     { "GL_COLOR_ATTACHMENT0", GLenum::GL_COLOR_ATTACHMENT0 },
     { "GL_COLOR_CLEAR_VALUE", GLenum::GL_COLOR_CLEAR_VALUE },
     { "GL_COLOR_WRITEMASK", GLenum::GL_COLOR_WRITEMASK },
+    { "GL_COMPRESSED_RGB_S3TC_DXT1_EXT", GLenum::GL_COMPRESSED_RGB_S3TC_DXT1_EXT },
     { "GL_COMPRESSED_RGBA_S3TC_DXT1_EXT", GLenum::GL_COMPRESSED_RGBA_S3TC_DXT1_EXT },
     { "GL_COMPRESSED_RGBA_S3TC_DXT3_EXT", GLenum::GL_COMPRESSED_RGBA_S3TC_DXT3_EXT },
     { "GL_COMPRESSED_RGBA_S3TC_DXT5_EXT", GLenum::GL_COMPRESSED_RGBA_S3TC_DXT5_EXT },
-    { "GL_COMPRESSED_RGB_S3TC_DXT1_EXT", GLenum::GL_COMPRESSED_RGB_S3TC_DXT1_EXT },
     { "GL_COMPRESSED_TEXTURE_FORMATS", GLenum::GL_COMPRESSED_TEXTURE_FORMATS },
     { "GL_CONSTANT_ALPHA", GLenum::GL_CONSTANT_ALPHA },
     { "GL_CONSTANT_COLOR", GLenum::GL_CONSTANT_COLOR },
@@ -159,13 +159,13 @@ const std::unordered_map<std::string, GLenum> Meta_EnumsByString_L =
 {
     { "GL_LEQUAL", GLenum::GL_LEQUAL },
     { "GL_LESS", GLenum::GL_LESS },
+    { "GL_LINE_LOOP", GLenum::GL_LINE_LOOP },
+    { "GL_LINE_STRIP", GLenum::GL_LINE_STRIP },
+    { "GL_LINE_WIDTH", GLenum::GL_LINE_WIDTH },
     { "GL_LINEAR", GLenum::GL_LINEAR },
     { "GL_LINEAR_MIPMAP_LINEAR", GLenum::GL_LINEAR_MIPMAP_LINEAR },
     { "GL_LINEAR_MIPMAP_NEAREST", GLenum::GL_LINEAR_MIPMAP_NEAREST },
     { "GL_LINES", GLenum::GL_LINES },
-    { "GL_LINE_LOOP", GLenum::GL_LINE_LOOP },
-    { "GL_LINE_STRIP", GLenum::GL_LINE_STRIP },
-    { "GL_LINE_WIDTH", GLenum::GL_LINE_WIDTH },
     { "GL_LINK_STATUS", GLenum::GL_LINK_STATUS },
     { "GL_LOSE_CONTEXT_ON_RESET", GLenum::GL_LOSE_CONTEXT_ON_RESET },
     { "GL_LOW_FLOAT", GLenum::GL_LOW_FLOAT },
@@ -196,9 +196,8 @@ const std::unordered_map<std::string, GLenum> Meta_EnumsByString_N =
     { "GL_NEAREST_MIPMAP_NEAREST", GLenum::GL_NEAREST_MIPMAP_NEAREST },
     { "GL_NEVER", GLenum::GL_NEVER },
     { "GL_NICEST", GLenum::GL_NICEST },
-    { "GL_NONE", GLenum::GL_NONE },
-    { "GL_NOTEQUAL", GLenum::GL_NOTEQUAL },
     { "GL_NO_ERROR", GLenum::GL_NO_ERROR },
+    { "GL_NOTEQUAL", GLenum::GL_NOTEQUAL },
     { "GL_NUM_COMPRESSED_TEXTURE_FORMATS", GLenum::GL_NUM_COMPRESSED_TEXTURE_FORMATS },
     { "GL_NUM_PROGRAM_BINARY_FORMATS", GLenum::GL_NUM_PROGRAM_BINARY_FORMATS }
 };
@@ -262,13 +261,13 @@ const std::unordered_map<std::string, GLenum> Meta_EnumsByString_R =
 
 const std::unordered_map<std::string, GLenum> Meta_EnumsByString_S =
 {
-    { "GL_SAMPLER_2D", GLenum::GL_SAMPLER_2D },
-    { "GL_SAMPLES", GLenum::GL_SAMPLES },
     { "GL_SAMPLE_ALPHA_TO_COVERAGE", GLenum::GL_SAMPLE_ALPHA_TO_COVERAGE },
     { "GL_SAMPLE_BUFFERS", GLenum::GL_SAMPLE_BUFFERS },
     { "GL_SAMPLE_COVERAGE", GLenum::GL_SAMPLE_COVERAGE },
     { "GL_SAMPLE_COVERAGE_INVERT", GLenum::GL_SAMPLE_COVERAGE_INVERT },
     { "GL_SAMPLE_COVERAGE_VALUE", GLenum::GL_SAMPLE_COVERAGE_VALUE },
+    { "GL_SAMPLER_2D", GLenum::GL_SAMPLER_2D },
+    { "GL_SAMPLES", GLenum::GL_SAMPLES },
     { "GL_SCISSOR_BOX", GLenum::GL_SCISSOR_BOX },
     { "GL_SCISSOR_TEST", GLenum::GL_SCISSOR_TEST },
     { "GL_SHADING_LANGUAGE_VERSION", GLenum::GL_SHADING_LANGUAGE_VERSION },
@@ -342,9 +341,9 @@ const std::unordered_map<std::string, GLenum> Meta_EnumsByString_T =
     { "GL_TEXTURE_MIN_FILTER", GLenum::GL_TEXTURE_MIN_FILTER },
     { "GL_TEXTURE_WRAP_S", GLenum::GL_TEXTURE_WRAP_S },
     { "GL_TEXTURE_WRAP_T", GLenum::GL_TEXTURE_WRAP_T },
-    { "GL_TRIANGLES", GLenum::GL_TRIANGLES },
     { "GL_TRIANGLE_FAN", GLenum::GL_TRIANGLE_FAN },
-    { "GL_TRIANGLE_STRIP", GLenum::GL_TRIANGLE_STRIP }
+    { "GL_TRIANGLE_STRIP", GLenum::GL_TRIANGLE_STRIP },
+    { "GL_TRIANGLES", GLenum::GL_TRIANGLES }
 };
 
 const std::unordered_map<std::string, GLenum> Meta_EnumsByString_U =

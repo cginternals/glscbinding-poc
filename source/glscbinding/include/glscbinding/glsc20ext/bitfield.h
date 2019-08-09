@@ -13,8 +13,7 @@ namespace glsc20ext
 
 // import bitfields to namespace
 using glsc::GL_NONE_BIT;
-using glsc::GL_COVERAGE_BUFFER_BIT_NV;
-
+using glsc::GL_UNUSED_BIT;
 
 
 } // namespace glsc20ext

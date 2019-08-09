@@ -19,5 +19,4 @@ Function<void, GLenum, GLenum, GLenum> Binding::StencilOp("glStencilOp");
 Function<void, GLenum, GLenum, GLenum, GLenum> Binding::StencilOpSeparate("glStencilOpSeparate");
 
 
-
 } // namespace glscbinding

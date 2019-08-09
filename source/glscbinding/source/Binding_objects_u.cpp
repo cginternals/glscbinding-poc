@@ -31,5 +31,4 @@ Function<void, GLint, GLsizei, GLboolean, const GLfloat *> Binding::UniformMatri
 Function<void, GLuint> Binding::UseProgram("glUseProgram");
 
 
-
 } // namespace glscbinding

@@ -11,5 +11,4 @@ namespace glscbinding
 
 
 
-
 } // namespace glscbinding

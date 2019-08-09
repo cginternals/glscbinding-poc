@@ -4,19 +4,14 @@
 #include <glscbinding/glsc/functions.h>
 
 
-using namespace glscbinding;
-
-
 namespace glsc
 {
 
 
 void glActiveTexture(GLenum texture)
 {
-    return Binding::ActiveTexture(texture);
+    return glscbinding::Binding::ActiveTexture(texture);
 }
-
-
 
 
 } // namespace glsc

@@ -37,7 +37,7 @@ namespace glscbinding { namespace aux
 
 int Meta::glscRevision()
 {
-    return GL_REVISION;
+    return GLSC_REVISION;
 }
 
 size_t Meta::alphabeticalGroupIndex(const std::string & identifier, const std::uint8_t prefixLength)

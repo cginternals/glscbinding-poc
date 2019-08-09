@@ -13,5 +13,4 @@ Function<void, GLenum> Binding::Enable("glEnable");
 Function<void, GLuint> Binding::EnableVertexAttribArray("glEnableVertexAttribArray");
 
 
-
 } // namespace glscbinding

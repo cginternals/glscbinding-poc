@@ -6,6 +6,7 @@
 
 #include <glscbinding/State.h>
 #include <glscbinding/AbstractFunction.h>
+#include <glscbinding/getProcAddress.h>
 
 
 namespace glscbinding
@@ -170,7 +171,9 @@ void Binding::initialize(
 
         if (s_firstGetProcAddress() == nullptr)
         {
-            s_firstGetProcAddress() = functionPointerResolver;
+            s_firstGetProcAddress() = functionPointerResolver == nullptr
+                ? glscbinding::getProcAddress
+                : functionPointerResolver;
         }
 
         s_getProcAddress() = functionPointerResolver == nullptr ? s_firstGetProcAddress() : functionPointerResolver;
@@ -187,7 +190,9 @@ void Binding::initialize(
         provideState(pos);
 
         if(_useContext)
+        {
             useContext(context);
+        }
 
         if (_resolveFunctions)
         {
@@ -197,7 +202,9 @@ void Binding::initialize(
 
     // restore previous context
     if(resolveWOUse)
+    {
         useContext(currentContext);
+    }
 }
 
 ProcAddress Binding::resolveFunction(const char * name)

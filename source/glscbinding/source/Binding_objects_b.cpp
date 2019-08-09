@@ -22,5 +22,4 @@ Function<void, GLenum, GLsizeiptr, const void *, GLenum> Binding::BufferData("gl
 Function<void, GLenum, GLintptr, GLsizeiptr, const void *> Binding::BufferSubData("glBufferSubData");
 
 
-
 } // namespace glscbinding

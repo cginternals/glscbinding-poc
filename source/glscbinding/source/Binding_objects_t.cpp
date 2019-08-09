@@ -17,5 +17,4 @@ Function<void, GLenum, GLsizei, GLenum, GLsizei, GLsizei> Binding::TexStorage2D(
 Function<void, GLenum, GLint, GLint, GLint, GLsizei, GLsizei, GLenum, GLenum, const void *> Binding::TexSubImage2D("glTexSubImage2D");
 
 
-
 } // namespace glscbinding
