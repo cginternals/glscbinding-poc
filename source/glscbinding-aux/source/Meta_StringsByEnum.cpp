@@ -145,6 +145,7 @@ const std::unordered_map<GLenum, std::string> Meta_StringsByEnum =
     { GLenum::GL_NEVER, "GL_NEVER" },
     { GLenum::GL_NICEST, "GL_NICEST" },
     { GLenum::GL_NO_ERROR, "GL_NO_ERROR" },
+    { GLenum::GL_NONE, "GL_NONE" },
     { GLenum::GL_NOTEQUAL, "GL_NOTEQUAL" },
     { GLenum::GL_NUM_COMPRESSED_TEXTURE_FORMATS, "GL_NUM_COMPRESSED_TEXTURE_FORMATS" },
     { GLenum::GL_NUM_PROGRAM_BINARY_FORMATS, "GL_NUM_PROGRAM_BINARY_FORMATS" },

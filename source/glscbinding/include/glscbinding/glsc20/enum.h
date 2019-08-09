@@ -137,6 +137,7 @@ using glsc::GL_NEAREST_MIPMAP_NEAREST;
 using glsc::GL_NEVER;
 using glsc::GL_NICEST;
 using glsc::GL_NO_ERROR;
+using glsc::GL_NONE;
 using glsc::GL_NOTEQUAL;
 using glsc::GL_NUM_COMPRESSED_TEXTURE_FORMATS;
 using glsc::GL_NUM_PROGRAM_BINARY_FORMATS;

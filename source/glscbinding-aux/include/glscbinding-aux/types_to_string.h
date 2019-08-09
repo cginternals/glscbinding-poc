@@ -19,7 +19,9 @@ namespace glsc
 GLSCBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const GLboolean & value);
 GLSCBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const GLenum & value);
 GLSCBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const GLextension & value);
+GLSCBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const AttribMask & value);
 GLSCBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const ClearBufferMask & value);
+GLSCBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const PathFontStyle & value);
 GLSCBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const UnusedMask & value);
 
 

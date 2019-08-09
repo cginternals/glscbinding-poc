@@ -33,7 +33,9 @@ extern const std::unordered_map<glsc::GLextension, std::string> Meta_StringsByEx
 extern const std::unordered_map<glsc::GLextension, std::set<std::string>> Meta_FunctionStringsByExtension;
 extern const std::map<Version, std::set<std::string>> Meta_FunctionStringsByVersion;
 
+extern const std::unordered_map<glsc::AttribMask, std::string> Meta_StringsByAttribMask;
 extern const std::unordered_map<glsc::ClearBufferMask, std::string> Meta_StringsByClearBufferMask;
+extern const std::unordered_map<glsc::PathFontStyle, std::string> Meta_StringsByPathFontStyle;
 extern const std::unordered_map<glsc::UnusedMask, std::string> Meta_StringsByUnusedMask;
 
 extern const std::array<std::unordered_map<std::string, glsc::GLbitfield>, 27> Meta_BitfieldsByStringMaps;

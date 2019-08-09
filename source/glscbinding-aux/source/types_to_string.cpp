@@ -33,9 +33,21 @@ std::ostream & operator<<(std::ostream & stream, const GLextension & value)
     return stream;
 }
 
+std::ostream & operator<<(std::ostream & stream, const AttribMask & value)
+{
+    stream << glscbinding::aux::bitfieldString<AttribMask>(value);
+    return stream;
+}
+
 std::ostream & operator<<(std::ostream & stream, const ClearBufferMask & value)
 {
     stream << glscbinding::aux::bitfieldString<ClearBufferMask>(value);
+    return stream;
+}
+
+std::ostream & operator<<(std::ostream & stream, const PathFontStyle & value)
+{
+    stream << glscbinding::aux::bitfieldString<PathFontStyle>(value);
     return stream;
 }
 
@@ -113,6 +125,18 @@ std::ostream & operator<<(std::ostream & stream, const AbstractValue * value)
     if (typeid(*value) == typeid(AbstractValue))
     {
         return stream << reinterpret_cast<const void*>(value);
+    }
+
+    
+    if (typeid(*value) == typeid(Value<glsc::AttribMask>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::AttribMask>*>(value);
+    }
+    
+    
+    if (typeid(*value) == typeid(Value<glsc::AttribMask *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::AttribMask *>*>(value);
     }
 
     
@@ -257,6 +281,30 @@ std::ostream & operator<<(std::ostream & stream, const AbstractValue * value)
     if (typeid(*value) == typeid(Value<glsc::GLuint *>))
     {
         return stream << *reinterpret_cast<const Value<glsc::GLuint *>*>(value);
+    }
+
+    
+    if (typeid(*value) == typeid(Value<glsc::GLuint64>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLuint64>*>(value);
+    }
+    
+    
+    if (typeid(*value) == typeid(Value<glsc::GLuint64 *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::GLuint64 *>*>(value);
+    }
+
+    
+    if (typeid(*value) == typeid(Value<glsc::PathFontStyle>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::PathFontStyle>*>(value);
+    }
+    
+    
+    if (typeid(*value) == typeid(Value<glsc::PathFontStyle *>))
+    {
+        return stream << *reinterpret_cast<const Value<glsc::PathFontStyle *>*>(value);
     }
 
     

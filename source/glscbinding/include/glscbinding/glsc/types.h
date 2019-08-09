@@ -37,7 +37,10 @@ using GLfloat = khronos_float_t;
 using GLchar = char;
 using GLintptr = khronos_intptr_t;
 using GLsizeiptr = khronos_ssize_t;
+using GLuint64 = khronos_uint64_t;
+enum class AttribMask : unsigned int;
 enum class ClearBufferMask : unsigned int;
+enum class PathFontStyle : unsigned int;
 enum class UnusedMask : unsigned int;
 
 } // namespace glsc

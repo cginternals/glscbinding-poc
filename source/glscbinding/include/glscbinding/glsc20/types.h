@@ -11,6 +11,7 @@ namespace glsc20
 
 
 
+using glsc::AttribMask;
 using glsc::ClearBufferMask;
 using glsc::GLbitfield;
 using glsc::GLchar;
@@ -23,6 +24,8 @@ using glsc::GLsizei;
 using glsc::GLsizeiptr;
 using glsc::GLubyte;
 using glsc::GLuint;
+using glsc::GLuint64;
+using glsc::PathFontStyle;
 using glsc::UnusedMask;
 
 

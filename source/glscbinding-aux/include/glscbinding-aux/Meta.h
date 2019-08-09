@@ -262,7 +262,31 @@ public:
     *  @return
     *    The string representation of the value
     */
+    static const std::string & getString(glsc::AttribMask glscbitfield);
+
+    /**
+    *  @brief
+    *    Convert bitfield to symbol name string representation
+    *
+    *  @param[in] glbitfield
+    *    The bitfield value
+    *
+    *  @return
+    *    The string representation of the value
+    */
     static const std::string & getString(glsc::ClearBufferMask glscbitfield);
+
+    /**
+    *  @brief
+    *    Convert bitfield to symbol name string representation
+    *
+    *  @param[in] glbitfield
+    *    The bitfield value
+    *
+    *  @return
+    *    The string representation of the value
+    */
+    static const std::string & getString(glsc::PathFontStyle glscbitfield);
 
     /**
     *  @brief
