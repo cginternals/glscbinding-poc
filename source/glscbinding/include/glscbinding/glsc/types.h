@@ -25,7 +25,6 @@ namespace glsc
 {
 
 
-
 enum class GLextension : int;
 enum class GLenum : unsigned int;
 using GLbitfield = unsigned int;
@@ -42,6 +41,7 @@ enum class AttribMask : unsigned int;
 enum class ClearBufferMask : unsigned int;
 enum class PathFontStyle : unsigned int;
 enum class UnusedMask : unsigned int;
+
 
 } // namespace glsc
 
