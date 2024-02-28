@@ -11,8 +11,11 @@ namespace glsc20ext
 {
 
 
-// import booleans to namespace
+// use boolean type
+using glsc::GLboolean;
 
+
+// import booleans to namespace
 using glsc::GL_FALSE;
 using glsc::GL_TRUE;
 

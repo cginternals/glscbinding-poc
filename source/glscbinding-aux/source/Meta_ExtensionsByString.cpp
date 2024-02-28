@@ -32,7 +32,11 @@ const std::unordered_map<std::string, GLextension> Meta_ExtensionsByString_G{};
 
 const std::unordered_map<std::string, GLextension> Meta_ExtensionsByString_H{};
 
-const std::unordered_map<std::string, GLextension> Meta_ExtensionsByString_I{};
+const std::unordered_map<std::string, GLextension> Meta_ExtensionsByString_I =
+{
+    { "GL_IMG_pvric_end_to_end_signature", GLextension::GL_IMG_pvric_end_to_end_signature },
+    { "GL_IMG_tile_region_protection", GLextension::GL_IMG_tile_region_protection }
+};
 
 const std::unordered_map<std::string, GLextension> Meta_ExtensionsByString_J{};
 

@@ -11,7 +11,7 @@ namespace glscbinding { namespace aux
 {
 
 
-const std::unordered_map<GLenum, std::string> Meta_StringsByEnum =
+const std::multimap<GLenum, std::string> Meta_StringsByEnum =
 {
     { GLenum::GL_ACTIVE_TEXTURE, "GL_ACTIVE_TEXTURE" },
     { GLenum::GL_ALIASED_LINE_WIDTH_RANGE, "GL_ALIASED_LINE_WIDTH_RANGE" },
@@ -163,6 +163,7 @@ const std::unordered_map<GLenum, std::string> Meta_StringsByEnum =
     { GLenum::GL_POLYGON_OFFSET_FILL, "GL_POLYGON_OFFSET_FILL" },
     { GLenum::GL_POLYGON_OFFSET_UNITS, "GL_POLYGON_OFFSET_UNITS" },
     { GLenum::GL_PROGRAM_BINARY_FORMATS, "GL_PROGRAM_BINARY_FORMATS" },
+    { GLenum::GL_PVRIC_SIGNATURE_MISMATCH_IMG, "GL_PVRIC_SIGNATURE_MISMATCH_IMG" },
     { GLenum::GL_R8, "GL_R8" },
     { GLenum::GL_RED, "GL_RED" },
     { GLenum::GL_RED_BITS, "GL_RED_BITS" },
@@ -271,6 +272,9 @@ const std::unordered_map<GLenum, std::string> Meta_StringsByEnum =
     { GLenum::GL_TRIANGLE_FAN, "GL_TRIANGLE_FAN" },
     { GLenum::GL_TRIANGLE_STRIP, "GL_TRIANGLE_STRIP" },
     { GLenum::GL_TRIANGLES, "GL_TRIANGLES" },
+    { GLenum::GL_TRP_ERROR_CONTEXT_RESET_IMG, "GL_TRP_ERROR_CONTEXT_RESET_IMG" },
+    { GLenum::GL_TRP_IMG, "GL_TRP_IMG" },
+    { GLenum::GL_TRP_UNSUPPORTED_CONTEXT_IMG, "GL_TRP_UNSUPPORTED_CONTEXT_IMG" },
     { GLenum::GL_UNKNOWN_CONTEXT_RESET, "GL_UNKNOWN_CONTEXT_RESET" },
     { GLenum::GL_UNPACK_ALIGNMENT, "GL_UNPACK_ALIGNMENT" },
     { GLenum::GL_UNSIGNED_BYTE, "GL_UNSIGNED_BYTE" },

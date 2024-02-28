@@ -222,7 +222,8 @@ const std::unordered_map<std::string, GLenum> Meta_EnumsByString_P =
     { "GL_POLYGON_OFFSET_FACTOR", GLenum::GL_POLYGON_OFFSET_FACTOR },
     { "GL_POLYGON_OFFSET_FILL", GLenum::GL_POLYGON_OFFSET_FILL },
     { "GL_POLYGON_OFFSET_UNITS", GLenum::GL_POLYGON_OFFSET_UNITS },
-    { "GL_PROGRAM_BINARY_FORMATS", GLenum::GL_PROGRAM_BINARY_FORMATS }
+    { "GL_PROGRAM_BINARY_FORMATS", GLenum::GL_PROGRAM_BINARY_FORMATS },
+    { "GL_PVRIC_SIGNATURE_MISMATCH_IMG", GLenum::GL_PVRIC_SIGNATURE_MISMATCH_IMG }
 };
 
 const std::unordered_map<std::string, GLenum> Meta_EnumsByString_Q{};
@@ -344,7 +345,10 @@ const std::unordered_map<std::string, GLenum> Meta_EnumsByString_T =
     { "GL_TEXTURE_WRAP_T", GLenum::GL_TEXTURE_WRAP_T },
     { "GL_TRIANGLE_FAN", GLenum::GL_TRIANGLE_FAN },
     { "GL_TRIANGLE_STRIP", GLenum::GL_TRIANGLE_STRIP },
-    { "GL_TRIANGLES", GLenum::GL_TRIANGLES }
+    { "GL_TRIANGLES", GLenum::GL_TRIANGLES },
+    { "GL_TRP_ERROR_CONTEXT_RESET_IMG", GLenum::GL_TRP_ERROR_CONTEXT_RESET_IMG },
+    { "GL_TRP_IMG", GLenum::GL_TRP_IMG },
+    { "GL_TRP_UNSUPPORTED_CONTEXT_IMG", GLenum::GL_TRP_UNSUPPORTED_CONTEXT_IMG }
 };
 
 const std::unordered_map<std::string, GLenum> Meta_EnumsByString_U =

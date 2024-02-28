@@ -98,7 +98,7 @@ GLSCBINDING_AUX_API void resume();
 *  @remarks
 *    This function is intended to get used by glscbinding and not by a user of glscbinding
 */
-GLSCBINDING_AUX_API void log(LogEntry call);
+GLSCBINDING_AUX_API void log(FunctionCall && call);
 
 
 } } // namespace glscbinding::aux

@@ -70,7 +70,7 @@ target_link_libraries(${target}
     ${DEFAULT_LIBRARIES}
     ${META_PROJECT_NAME}::glscbinding
     ${META_PROJECT_NAME}::glscbinding-aux
-    gmock-dev
+    googletest::googletest
 )
 
 

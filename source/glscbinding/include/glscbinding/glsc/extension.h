@@ -13,6 +13,8 @@ enum class GLextension : int // GLextension is not a type introduced by GLSC API
 {
     UNKNOWN = -1,
     GL_EXT_texture_compression_s3tc,
+    GL_IMG_pvric_end_to_end_signature,
+    GL_IMG_tile_region_protection,
     GL_OES_depth24,
     GL_OES_depth32,
     GL_OES_rgb8_rgba8,

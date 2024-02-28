@@ -11,6 +11,10 @@ namespace glsc20
 {
 
 
+// use enum type
+using glsc::GLenum;
+
+
 // import enums to namespace
 using glsc::GL_ACTIVE_TEXTURE;
 using glsc::GL_ALIASED_LINE_WIDTH_RANGE;

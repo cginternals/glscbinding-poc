@@ -13,7 +13,10 @@ namespace glsc20ext
 
 using glsc::AttribMask;
 using glsc::ClearBufferMask;
+using glsc::FragmentShaderDestMaskATI;
+using glsc::FragmentShaderDestModMaskATI;
 using glsc::GLbitfield;
+using glsc::GLboolean;
 using glsc::GLchar;
 using glsc::GLenum;
 using glsc::GLextension;

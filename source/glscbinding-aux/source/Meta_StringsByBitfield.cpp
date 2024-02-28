@@ -27,6 +27,16 @@ const std::unordered_map<ClearBufferMask, std::string> Meta_StringsByClearBuffer
     { ClearBufferMask::GL_STENCIL_BUFFER_BIT, "GL_STENCIL_BUFFER_BIT" }
 };
 
+const std::unordered_map<FragmentShaderDestMaskATI, std::string> Meta_StringsByFragmentShaderDestMaskATI =
+{
+    { FragmentShaderDestMaskATI::GL_NONE_BIT, "GL_NONE_BIT" }
+};
+
+const std::unordered_map<FragmentShaderDestModMaskATI, std::string> Meta_StringsByFragmentShaderDestModMaskATI =
+{
+    { FragmentShaderDestModMaskATI::GL_NONE_BIT, "GL_NONE_BIT" }
+};
+
 const std::unordered_map<PathFontStyle, std::string> Meta_StringsByPathFontStyle =
 {
     { PathFontStyle::GL_NONE_BIT, "GL_NONE_BIT" }

@@ -28,15 +28,18 @@ extern const std::array<std::unordered_map<std::string, glsc::GLextension>, 27> 
 extern const std::unordered_map<glsc::GLextension, Version> Meta_ReqVersionsByExtension;
 
 extern const std::unordered_map<glsc::GLboolean, std::string> Meta_StringsByBoolean;
-extern const std::unordered_map<glsc::GLenum, std::string> Meta_StringsByEnum;
+extern const std::multimap<glsc::GLenum, std::string> Meta_StringsByEnum;
 extern const std::unordered_map<glsc::GLextension, std::string> Meta_StringsByExtension;
 extern const std::unordered_map<glsc::GLextension, std::set<std::string>> Meta_FunctionStringsByExtension;
 extern const std::map<Version, std::set<std::string>> Meta_FunctionStringsByVersion;
 
 extern const std::unordered_map<glsc::AttribMask, std::string> Meta_StringsByAttribMask;
 extern const std::unordered_map<glsc::ClearBufferMask, std::string> Meta_StringsByClearBufferMask;
+extern const std::unordered_map<glsc::FragmentShaderDestMaskATI, std::string> Meta_StringsByFragmentShaderDestMaskATI;
+extern const std::unordered_map<glsc::FragmentShaderDestModMaskATI, std::string> Meta_StringsByFragmentShaderDestModMaskATI;
 extern const std::unordered_map<glsc::PathFontStyle, std::string> Meta_StringsByPathFontStyle;
 extern const std::unordered_map<glsc::UnusedMask, std::string> Meta_StringsByUnusedMask;
+
 
 extern const std::array<std::unordered_map<std::string, glsc::GLbitfield>, 27> Meta_BitfieldsByStringMaps;
 extern const std::unordered_map<std::string, glsc::GLboolean> Meta_BooleansByString;

@@ -43,6 +43,26 @@ const std::string & Meta::getString(const ClearBufferMask glscbitfield)
     return none;
 }
 
+const std::string & Meta::getString(const FragmentShaderDestMaskATI glscbitfield)
+{
+    const auto i = Meta_StringsByFragmentShaderDestMaskATI.find(glscbitfield);
+    if (i != Meta_StringsByFragmentShaderDestMaskATI.end())
+    {
+        return i->second;
+    }
+    return none;
+}
+
+const std::string & Meta::getString(const FragmentShaderDestModMaskATI glscbitfield)
+{
+    const auto i = Meta_StringsByFragmentShaderDestModMaskATI.find(glscbitfield);
+    if (i != Meta_StringsByFragmentShaderDestModMaskATI.end())
+    {
+        return i->second;
+    }
+    return none;
+}
+
 const std::string & Meta::getString(const PathFontStyle glscbitfield)
 {
     const auto i = Meta_StringsByPathFontStyle.find(glscbitfield);

@@ -16,11 +16,13 @@ namespace glsc
 {
 
 
-GLSCBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const GLboolean & value);
 GLSCBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const GLenum & value);
+GLSCBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const GLboolean & value);
 GLSCBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const GLextension & value);
 GLSCBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const AttribMask & value);
 GLSCBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const ClearBufferMask & value);
+GLSCBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const FragmentShaderDestMaskATI & value);
+GLSCBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const FragmentShaderDestModMaskATI & value);
 GLSCBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const PathFontStyle & value);
 GLSCBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const UnusedMask & value);
 
@@ -69,6 +71,13 @@ GLSCBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const Value
 */
 template <>
 GLSCBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const Value<glsc::GLboolean> & value);
+
+/**
+*  @brief
+*    A specialized ostream operator for the const char * Value template
+*/
+template <>
+GLSCBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const Value<const char *> & value);
 
 /**
 *  @brief

@@ -31,6 +31,18 @@ enum class ClearBufferMask : unsigned int
 };
 
 
+enum class FragmentShaderDestMaskATI : unsigned int
+{
+    GL_NONE_BIT           = 0x0 // Generic GL_NONE_BIT
+};
+
+
+enum class FragmentShaderDestModMaskATI : unsigned int
+{
+    GL_NONE_BIT           = 0x0 // Generic GL_NONE_BIT
+};
+
+
 enum class PathFontStyle : unsigned int
 {
     GL_NONE_BIT           = 0x0 // Generic GL_NONE_BIT
@@ -47,7 +59,7 @@ enum class UnusedMask : unsigned int
 
 GLSCBINDING_CONSTEXPR static const glscbinding::SharedBitfield<AttribMask, ClearBufferMask> GL_COLOR_BUFFER_BIT = AttribMask::GL_COLOR_BUFFER_BIT;
 GLSCBINDING_CONSTEXPR static const glscbinding::SharedBitfield<AttribMask, ClearBufferMask> GL_DEPTH_BUFFER_BIT = AttribMask::GL_DEPTH_BUFFER_BIT;
-GLSCBINDING_CONSTEXPR static const glscbinding::SharedBitfield<AttribMask, ClearBufferMask, PathFontStyle> GL_NONE_BIT = AttribMask::GL_NONE_BIT;
+GLSCBINDING_CONSTEXPR static const glscbinding::SharedBitfield<AttribMask, ClearBufferMask, FragmentShaderDestMaskATI, FragmentShaderDestModMaskATI, PathFontStyle> GL_NONE_BIT = AttribMask::GL_NONE_BIT;
 GLSCBINDING_CONSTEXPR static const glscbinding::SharedBitfield<AttribMask, ClearBufferMask> GL_STENCIL_BUFFER_BIT = AttribMask::GL_STENCIL_BUFFER_BIT;
 GLSCBINDING_CONSTEXPR static const UnusedMask GL_UNUSED_BIT = UnusedMask::GL_UNUSED_BIT;
 

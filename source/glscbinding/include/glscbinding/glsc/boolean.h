@@ -1,3 +1,4 @@
+
 #pragma once
 
 
@@ -14,12 +15,6 @@ namespace glsc
 
 using GLboolean = glscbinding::Boolean8;
 
-
-} // namespace gl
-
-
-namespace glsc
-{
 
 // import booleans to namespace
 

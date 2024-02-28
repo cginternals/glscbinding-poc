@@ -9,6 +9,7 @@
 
 #include <KHR/khrplatform.h>
 
+
 #ifdef _MSC_VER
 #define GLSC_APIENTRY __stdcall
 #else
@@ -25,20 +26,22 @@ namespace glsc
 {
 
 
-enum class GLextension : int;
-enum class GLenum : unsigned int;
 using GLbitfield = unsigned int;
-using GLubyte = khronos_uint8_t;
-using GLint = int;
-using GLuint = unsigned int;
-using GLsizei = int;
-using GLfloat = khronos_float_t;
 using GLchar = char;
+using GLfloat = khronos_float_t;
+using GLint = int;
 using GLintptr = khronos_intptr_t;
+using GLsizei = int;
 using GLsizeiptr = khronos_ssize_t;
+using GLubyte = khronos_uint8_t;
+using GLuint = unsigned int;
 using GLuint64 = khronos_uint64_t;
 enum class AttribMask : unsigned int;
 enum class ClearBufferMask : unsigned int;
+enum class FragmentShaderDestMaskATI : unsigned int;
+enum class FragmentShaderDestModMaskATI : unsigned int;
+enum class GLenum : unsigned int;
+enum class GLextension : int;
 enum class PathFontStyle : unsigned int;
 enum class UnusedMask : unsigned int;
 
